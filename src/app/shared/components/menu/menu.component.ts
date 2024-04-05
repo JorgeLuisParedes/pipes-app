@@ -1,3 +1,4 @@
+import { NumbersPageComponent } from './../../../products/pages/numbers-page/numbers-page.component';
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
@@ -18,14 +19,17 @@ export class MenuComponent {
 					{
 						label: 'Textos y Fechas',
 						icon: 'pi pi-align-left',
+						routerLink: '/',
 					},
 					{
 						label: 'Números',
 						icon: 'pi pi-dollar',
+						routerLink: 'numbers',
 					},
 					{
 						label: 'No comunes',
 						icon: 'pi pi-globe',
+						routerLink: 'uncommon',
 					},
 				],
 			},
