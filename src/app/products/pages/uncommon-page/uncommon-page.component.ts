@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, interval, tap } from 'rxjs';
 
 @Component({
 	selector: 'app-uncommon-page',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
 	styleUrl: './uncommon-page.component.css',
 })
 export class UncommonPageComponent {
-	// i18n Select
+	// i18n Select Pipe
 	public name: string = 'Jorge Alejandro';
 	public gender: 'male' | 'female' = 'male';
 	public invitationMap = {
@@ -19,7 +20,7 @@ export class UncommonPageComponent {
 		this.gender = 'female';
 	}
 
-	// i18nPlural
+	// i18nPlural Pipe
 	public clients: string[] = ['Maria', 'Pedro', 'Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
 	public clientMap = {
 		'=0': 'no tenemos ningún cliente esperando.',
@@ -32,10 +33,22 @@ export class UncommonPageComponent {
 		this.clients.shift();
 	}
 
-	// KeyValue
+	// KeyValue Pipe
 	public person = {
 		name: 'Jorge Alejandro',
 		age: 3,
 		address: 'Oviedo, España',
 	};
+
+	// Async Pipe
+	public myObservableTimer: Observable<number> = interval(2000).pipe(tap((value) => console.log('tap', value)));
+
+	public promiseValue: Promise<string> = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('Tenemos data en el promesa.');
+			console.log('Tenemos data en el promesa.');
+			this.person.name = 'Sophia Victoria';
+			this.person.age = 16;
+		}, 3500);
+	});
 }
