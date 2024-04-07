@@ -9,9 +9,10 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { UncommonPageComponent } from './pages/uncommon-page/uncommon-page.component';
 
 import { ToggleCasePipe } from './pipes/toggle-case.pipe';
+import { CanFlyPipe } from './pipes/can-fly.pipe';
 
 @NgModule({
-	declarations: [BasicsPageComponent, NumbersPageComponent, UncommonPageComponent, OrderComponent, ToggleCasePipe],
+	declarations: [BasicsPageComponent, NumbersPageComponent, UncommonPageComponent, OrderComponent, ToggleCasePipe, CanFlyPipe],
 	imports: [CommonModule, ProductsRoutingModule, PrimeNgModule],
 })
 export class ProductsModule {}
