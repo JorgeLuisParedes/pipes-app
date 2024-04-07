@@ -20,7 +20,7 @@ export class UncommonPageComponent {
 	}
 
 	// i18nPlural
-	public cliente: string[] = ['Maria', 'Pedro', 'Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
+	public clients: string[] = ['Maria', 'Pedro', 'Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
 	public clientMap = {
 		'=0': 'no tenemos ningún cliente esperando.',
 		'=1': 'tenemos un cliente esperando.',
@@ -29,6 +29,6 @@ export class UncommonPageComponent {
 	};
 
 	deleteClient(): void {
-		this.cliente.shift();
+		this.clients.shift();
 	}
 }
